@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/alittlebyte/roskusstrah/static/js/main.6c08ce65.chunk.js",
-    "main.js.map": "/alittlebyte/roskusstrah/static/js/main.6c08ce65.chunk.js.map",
-    "runtime-main.js": "/alittlebyte/roskusstrah/static/js/runtime-main.4a8f33ec.js",
-    "runtime-main.js.map": "/alittlebyte/roskusstrah/static/js/runtime-main.4a8f33ec.js.map",
-    "static/js/2.3ddb09c1.chunk.js": "/alittlebyte/roskusstrah/static/js/2.3ddb09c1.chunk.js",
-    "static/js/2.3ddb09c1.chunk.js.map": "/alittlebyte/roskusstrah/static/js/2.3ddb09c1.chunk.js.map",
-    "index.html": "/alittlebyte/roskusstrah/index.html",
-    "precache-manifest.cce1abbd89f6ad03e27db215f24f6187.js": "/alittlebyte/roskusstrah/precache-manifest.cce1abbd89f6ad03e27db215f24f6187.js",
-    "service-worker.js": "/alittlebyte/roskusstrah/service-worker.js",
-    "static/js/2.3ddb09c1.chunk.js.LICENSE.txt": "/alittlebyte/roskusstrah/static/js/2.3ddb09c1.chunk.js.LICENSE.txt"
+    "main.js": "/roskusstrah/static/js/main.6c08ce65.chunk.js",
+    "main.js.map": "/roskusstrah/static/js/main.6c08ce65.chunk.js.map",
+    "runtime-main.js": "/roskusstrah/static/js/runtime-main.5398e5a7.js",
+    "runtime-main.js.map": "/roskusstrah/static/js/runtime-main.5398e5a7.js.map",
+    "static/js/2.3ddb09c1.chunk.js": "/roskusstrah/static/js/2.3ddb09c1.chunk.js",
+    "static/js/2.3ddb09c1.chunk.js.map": "/roskusstrah/static/js/2.3ddb09c1.chunk.js.map",
+    "index.html": "/roskusstrah/index.html",
+    "precache-manifest.9f412e0824d249e819fd657ca2a95422.js": "/roskusstrah/precache-manifest.9f412e0824d249e819fd657ca2a95422.js",
+    "service-worker.js": "/roskusstrah/service-worker.js",
+    "static/js/2.3ddb09c1.chunk.js.LICENSE.txt": "/roskusstrah/static/js/2.3ddb09c1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4a8f33ec.js",
+    "static/js/runtime-main.5398e5a7.js",
     "static/js/2.3ddb09c1.chunk.js",
     "static/js/main.6c08ce65.chunk.js"
   ]
