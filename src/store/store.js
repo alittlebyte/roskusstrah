@@ -4,13 +4,12 @@ import axios from 'axios';
 
 //DB request
 const fetchRepos = (state) => {
-	return axios.get(`https://api.github.com/search/repositories?q=${state.repo?`${state.repo} in:name`:'kuschat OR kusbox in:name'}${state.name?`+user:${state.name}`:''}${state.language?`+language:${state.language}`:''}${state.stars?`stars:${state.stars}`:''}`)
+	return axios.get(`https://api.github.com/search/repositories?q=${state.repo?`${state.repo} in:name`:''}${state.progLang?`+language:${state.progLang}`:''}${state.stars?`stars:${state.stars}`:''}`)
 }
 
 //initial state
 const initState = {
-	repos: [],
-	errMessage:''
+	repos: []
 }
 
 //actions
@@ -18,12 +17,6 @@ const loadRepos = request => {
 	return {
 		type: 'LOAD_REPOS',
 		payload:request
-	}
-}
-const errRepos = err => {
-	return {
-		type: 'ERR_REPOS',
-		payload:err
 	}
 }
 
@@ -34,10 +27,6 @@ const reduceRepos = (state = initState, action) => {
 			return {
 				repos: action.payload
 			}
-		case 'ERR_REPOS':
-			return{
-				errMessage: action.payload
-			}
 		default:
 			return state;
 	}
@@ -45,7 +34,7 @@ const reduceRepos = (state = initState, action) => {
 
 //action creators
 export const listRepos = usr => dispatch => {
-	return fetchRepos(usr).then(res => dispatch(loadRepos(res.data))).catch(err => dispatch(errRepos(err.response)))
+	return fetchRepos(usr).then(res => dispatch(loadRepos(res.data)))
 }
 
 //store

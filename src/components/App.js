@@ -8,8 +8,7 @@ class App extends Component {
 		super(props)
 
 		this.state={
-			repo:'',
-			name:'',
+			repo:'alittlebyte',
 			progLang:'',
 			stars:''
 		}
@@ -27,36 +26,46 @@ class App extends Component {
 
 	componentDidMount(){
 		this.props.listRepos(this.state)
+		this.setState({repo:''})
 	}
 
 	render (){
+		console.log(this.state)
+		let languages = ['none','JavaScript','Python','C++','C#','Java','PHP','Clojure','Ruby','Erlang','Scala','Haskell','Swift']
 		return (
 			<div>
 				<form className='search-bar' onSubmit={this.handleRepos}>
 					<input placeholder="Поиск по имени репозитория" id="repo" type="text" onChange={this.dataToState}/>
-					<input type="submit" value="Что-нибудь" />
+					<input type="submit" value="Найти это!"/>
 				</form>
+				<Selector id={"progLang"} onChange={this.dataToState}>
+					{languages.map(language => {
+						return(
+							<Selector.Option lang={language}/> 
+						)
+					})}
+				</Selector>
 				<div>
 					<h4>Список доступных репозиториев:</h4>
-					<ul>
-						{!this.props.repos.items
-							?<li>Список загружается...</li>
-							:(this.props.errMessage)
-								?(this.props.errMessage.status === 404)
-									?<li>Такого пользователя не существует!</li>
-									:<li>Ошибка {this.props.errMessage.status}: {this.props.errMessage.statusText}</li>
-								:this.props.repos.items.map(repo => {
-									return(
-										<li key={repo.id}>
-											<div>{repo.name}</div>
-											<div>{repo.description}</div>
-											<div>{repo.language}</div>
-											<div>{repo.stargazers_count}</div>
-										</li>
-									)
-								})		
-						}	
-					</ul>
+					<table>
+						<tbody>
+							{!this.props.repos.items
+								?<tr><td>Список загружается...</td></tr>
+								:this.props.repos['total_count'] === 0
+									?<tr><td>По заданным параметрам ничего не найдено!</td></tr>
+									:this.props.repos.items.map(repo => {
+										return(
+											<tr key={repo.id}>
+												<td>{repo.name}</td>
+												<td>{repo.description}</td>
+												<td>{repo.language}</td>
+												<td>{repo.stargazers_count}</td>
+											</tr>
+										)
+									})		
+							}	
+						</tbody>
+					</table>
 				</div>
 			</div>
 		)
@@ -64,8 +73,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-	repos: state.repos,
-	errMessage: state.errMessage
+	repos: state.repos
 })
 
 export default connect(mapStateToProps,{listRepos})(App)

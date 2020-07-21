@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Selector extends Component{
 	render(){
 		return(
-			<select className="selector" onChange={this.props.onChange}>
+			<select className="selector" id={this.props.id} onChange={this.props.onChange}>
 				{this.props.children}
 			</select>
 		)
@@ -13,7 +13,7 @@ export default class Selector extends Component{
 Selector.Option = class Option extends Component{
 	render(){
 		return(
-			<option value={this.props.value}>{this.props.text}</option>
+			<option value={this.props.lang}>{this.props.lang}</option>
 		)
 	}
 }
