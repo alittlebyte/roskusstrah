@@ -4,7 +4,7 @@ import axios from 'axios';
 
 //DB request
 const fetchRepos = (state) => {
-	return axios.get(`https://api.github.com/users/${state.name}/repos`)
+	return axios.get(`https://api.github.com/search/repositories?q=${state.repo?`${state.repo} in:name`:'kuschat OR kusbox in:name'}${state.name?`+user:${state.name}`:''}${state.language?`+language:${state.language}`:''}${state.stars?`stars:${state.stars}`:''}`)
 }
 
 //initial state

@@ -8,9 +8,9 @@ class App extends Component {
 		super(props)
 
 		this.state={
-			name:'alittlebyte',
+			repo:'',
+			name:'',
 			progLang:'',
-			spokenLang:'',
 			stars:''
 		}
 	}
@@ -30,30 +30,32 @@ class App extends Component {
 	}
 
 	render (){
-		console.log(this.props)
 		return (
 			<div>
 				<form className='search-bar' onSubmit={this.handleRepos}>
-					<input placeholder="Поиск по имени пользователя" id="repo" type='text' onChange={this.dataToState}/>
+					<input placeholder="Поиск по имени репозитория" id="repo" type="text" onChange={this.dataToState}/>
 					<input type="submit" value="Что-нибудь" />
 				</form>
 				<div>
 					<h4>Список доступных репозиториев:</h4>
 					<ul>
-						{(this.props.errMessage)
-							?(this.props.errMessage.status === 404)
-								?<li>Такого пользователя не существует!</li>
-								:<li>Ошибка {this.props.errMessage.status}: {this.props.errMessage.statusText}</li>
-							:this.props.repos.map(repo => {
-								return(
-									<li key={repo.id}>
-										<div>{repo.name}</div>
-										<div>{repo.description}</div>
-										<div>{repo.language}</div>
-									</li>
-								)
-							})
-						}
+						{!this.props.repos.items
+							?<li>Список загружается...</li>
+							:(this.props.errMessage)
+								?(this.props.errMessage.status === 404)
+									?<li>Такого пользователя не существует!</li>
+									:<li>Ошибка {this.props.errMessage.status}: {this.props.errMessage.statusText}</li>
+								:this.props.repos.items.map(repo => {
+									return(
+										<li key={repo.id}>
+											<div>{repo.name}</div>
+											<div>{repo.description}</div>
+											<div>{repo.language}</div>
+											<div>{repo.stargazers_count}</div>
+										</li>
+									)
+								})		
+						}	
 					</ul>
 				</div>
 			</div>
