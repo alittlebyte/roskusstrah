@@ -8,7 +8,7 @@ class App extends Component {
 		super(props)
 
 		this.state={
-			repo:'alittlebyte',
+			repo:'octocat',
 			progLang:'',
 			stars:''
 		}
@@ -26,22 +26,29 @@ class App extends Component {
 
 	componentDidMount(){
 		this.props.listRepos(this.state)
-		this.setState({repo:''})
 	}
 
 	render (){
 		console.log(this.state)
 		let languages = ['none','JavaScript','Python','C++','C#','Java','PHP','Clojure','Ruby','Erlang','Scala','Haskell','Swift']
+		let stars = [0,10,25,50,100,200,500,1000,2500,5000,10000]
 		return (
 			<div>
 				<form className='search-bar' onSubmit={this.handleRepos}>
-					<input placeholder="Поиск по имени репозитория" id="repo" type="text" onChange={this.dataToState}/>
+					<input placeholder="Поиск по имени/репозиторию" id="repo" type="text" onChange={this.dataToState}/>
 					<input type="submit" value="Найти это!"/>
 				</form>
 				<Selector id={"progLang"} onChange={this.dataToState}>
 					{languages.map(language => {
 						return(
-							<Selector.Option lang={language}/> 
+							<Selector.Option key={languages.indexOf(language)} lang={language}/> 
+						)
+					})}
+				</Selector>
+				<Selector id={"stars"} onChange={this.dataToState}>
+					{stars.map(star => {
+						return(
+							<Selector.Option key={stars.indexOf(star)} lang={star}/> 
 						)
 					})}
 				</Selector>
