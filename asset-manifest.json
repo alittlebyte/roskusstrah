@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/roskusstrah/static/js/main.0455dc7e.chunk.js",
-    "main.js.map": "/roskusstrah/static/js/main.0455dc7e.chunk.js.map",
+    "main.js": "/roskusstrah/static/js/main.a895c936.chunk.js",
+    "main.js.map": "/roskusstrah/static/js/main.a895c936.chunk.js.map",
     "runtime-main.js": "/roskusstrah/static/js/runtime-main.5398e5a7.js",
     "runtime-main.js.map": "/roskusstrah/static/js/runtime-main.5398e5a7.js.map",
     "static/js/2.294b6500.chunk.js": "/roskusstrah/static/js/2.294b6500.chunk.js",
     "static/js/2.294b6500.chunk.js.map": "/roskusstrah/static/js/2.294b6500.chunk.js.map",
     "index.html": "/roskusstrah/index.html",
-    "precache-manifest.2a447790d760e3b2b30440d088434c99.js": "/roskusstrah/precache-manifest.2a447790d760e3b2b30440d088434c99.js",
+    "precache-manifest.5b356aa6786ac7ba26fc053eb6baa270.js": "/roskusstrah/precache-manifest.5b356aa6786ac7ba26fc053eb6baa270.js",
     "service-worker.js": "/roskusstrah/service-worker.js",
     "static/js/2.294b6500.chunk.js.LICENSE.txt": "/roskusstrah/static/js/2.294b6500.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5398e5a7.js",
     "static/js/2.294b6500.chunk.js",
-    "static/js/main.0455dc7e.chunk.js"
+    "static/js/main.a895c936.chunk.js"
   ]
 }
