@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import axios from 'axios';
 
 //DB request
-const fetchRepos = (user = 'alittlebyte') => {
-	return axios.get(`https://api.github.com/users/${user}/repos`)
+const fetchRepos = (state) => {
+	return axios.get(`https://api.github.com/users/${state.name}/repos`)
 }
+
 //initial state
 const initState = {
-	repos: []
+	repos: [],
+	errMessage:''
 }
 
 //actions
@@ -16,6 +18,12 @@ const loadRepos = request => {
 	return {
 		type: 'LOAD_REPOS',
 		payload:request
+	}
+}
+const errRepos = err => {
+	return {
+		type: 'ERR_REPOS',
+		payload:err
 	}
 }
 
@@ -26,14 +34,18 @@ const reduceRepos = (state = initState, action) => {
 			return {
 				repos: action.payload
 			}
+		case 'ERR_REPOS':
+			return{
+				errMessage: action.payload
+			}
 		default:
 			return state;
 	}
 }
 
 //action creators
-export const listRepos = (usr) => dispatch => {
-	return fetchRepos(usr).then(res => dispatch(loadRepos(res.data)))
+export const listRepos = usr => dispatch => {
+	return fetchRepos(usr).then(res => dispatch(loadRepos(res.data))).catch(err => dispatch(errRepos(err.response)))
 }
 
 //store
