@@ -19,7 +19,6 @@ form{
   padding:35px 10px;
   border-radius:4px;
 }
-
 form label{
   display:flex;
   flex-direction:column;
@@ -27,17 +26,14 @@ form label{
   font-weight:bold;
   color:#f6f3f4;
 }
-
 form input[type="text"],form select{
   margin-top:5px;
   padding:4px;
   border:1px solid #b8b8b8;
 }
-
 form input::placeholder, form select{
   color:#666 !important;
 }
-
 form input[type="submit"]{
   background:#c9cc00;
   color:#fff;
@@ -48,23 +44,40 @@ form input[type="submit"]{
 }
 
 table{
-  max-width:50%;
+  width:50%;
+  padding:35px 0;
   margin:20px auto;
 }
-
 table tbody tr{
-  width:100%;
   display:grid;
   grid-template-columns:1fr 30fr 18fr 1fr;
-  grid-template-rows:20px 50px 20px 150px 20px;
+  grid-template-rows:30px 30px 20px 60px 20px;
+  background:#f5f5f5;
+  text-align:center;
+  vertical-align:middle;
+  border-bottom:1px solid #b8b8b8;
 }
 table tbody tr td:nth-child(1){
   grid-column:2/3;
   grid-row:4/5;
 }
-
+table tbody tr td:nth-child(2){
+  grid-column:2/3;
+  grid-row:2/3;
+  text-align:left;
+  padding-left:10%;
+  font-size:20px;
+  font-weight:bold;
+}
+table tbody tr td:nth-child(3){
+  grid-column:3/4;
+  grid-row:2/3;
+}
+table tbody tr td:nth-child(4){
+  grid-column:3/4;
+  grid-row:4/5;
+}
 table tbody tr td span{
-  content: "\2605";
   color:#FFDF00;
 }
 
@@ -81,5 +94,31 @@ table tbody tr td span{
   }
   form input[type="submit"]{
     margin-top:25px;
+  }
+
+  table{
+    width:60%;
+  }
+  table tbody tr{
+    grid-template-rows:30px 30px 20px 120px 20px;
+  }
+  table tbody tr td:nth-child(1){
+    text-align:left;
+    padding-left:10%;
+  }
+  table tbody tr td:nth-child(2){
+    grid-column:2/3;
+    grid-row:2/3;
+    text-align:left;
+    padding-left:10%;
+    font-size:20px;
+  }
+  table tbody tr td:nth-child(3){
+    grid-column:3/4;
+    grid-row:2/3;
+  }
+  table tbody tr td:nth-child(4){
+    grid-column:3/4;
+    grid-row:4/5;
   }
 }

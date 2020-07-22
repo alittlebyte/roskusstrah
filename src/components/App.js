@@ -30,7 +30,7 @@ class App extends Component {
 	}
 
 	render (){
-		let languages = ['none','Shell','HTML','CSS','JavaScript','Python','C','C++','C#','Java','PHP','Clojure','Ruby','Erlang','Scala','Haskell','Swift']
+		let languages = ['Любой','Shell','HTML','CSS','JavaScript','Python','C','C++','C#','Java','PHP','Clojure','Ruby','Erlang','Scala','Haskell','Swift']
 		let stars = [0,10,25,50,100,200,500,1000,2500,5000,10000]
 		return (
 			<main>
@@ -51,7 +51,7 @@ class App extends Component {
 								)
 							})}
 						</Selector>
-						<input type="submit" value="Найти это!"/>
+						<input type="submit" value="Найти!"/>
 					</form>
 				</nav>
 				<table>
@@ -65,8 +65,8 @@ class App extends Component {
 										<tr key={repo.id}>
 											<td>{repo.description}</td>
 											<td>{repo.name}</td>
-											<td>{repo.language}</td>
-											<td><span>☆</span>{repo.stargazers_count}</td>
+											<td>[{repo.language?repo.language:'Любой'}]</td>
+											<td><span>★</span>{repo.stargazers_count}</td>
 										</tr>
 									)
 								})		
