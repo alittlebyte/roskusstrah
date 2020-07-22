@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import '../styles/Selector.css'
 
 export default class Selector extends Component{
 	render(){
 		return(
-			<select className="selector" id={this.props.id} onChange={this.props.onChange}>
+			<label>{this.props.name}<select id={this.props.id} onChange={this.props.onChange}>
 				{this.props.children}
-			</select>
+			</select></label>
 		)
 	}
 }

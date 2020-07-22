@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+html,body{
+  margin:0;
+  padding:0;
+  font-family:'Roboto',sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav{
+  width:50%;
+  margin:20px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+form{
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+  background:#1f1f1f;
+  padding:35px 10px;
+  border-radius:4px;
+}
+
+form label{
+  display:flex;
+  flex-direction:column;
+  font-size:14px;
+  font-weight:bold;
+  color:#f6f3f4;
+}
+
+form input[type="text"],form select{
+  margin-top:5px;
+  padding:4px;
+  border:1px solid #b8b8b8;
+}
+
+form input::placeholder, form select{
+  color:#666 !important;
+}
+
+form input[type="submit"]{
+  background:#c9cc00;
+  color:#fff;
+  border:none;
+  text-decoration:none;
+  font-weight:bold;
+  padding:15px 10px;
+}
+
+table{
+  max-width:50%;
+  margin:20px auto;
+}
+
+table tbody tr{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 30fr 18fr 1fr;
+  grid-template-rows:20px 50px 20px 150px 20px;
+}
+table tbody tr td:nth-child(1){
+  grid-column:2/3;
+  grid-row:4/5;
+}
+
+table tbody tr td span{
+  content: "\2605";
+  color:#FFDF00;
+}
+
+@media only screen and (max-width:840px){
+  form{
+    flex-direction:column;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  form label,form input[type="submit"]{
+    margin-top:15px;
+    margin-left:15px;
   }
-  to {
-    transform: rotate(360deg);
+  form input[type="text"],form select{
+    min-width:180px;
+  }
+  form input[type="submit"]{
+    margin-top:25px;
   }
 }

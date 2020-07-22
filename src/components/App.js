@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { listRepos } from '../store/store.js'
 import Selector from './Selector'
+import '../styles/App.css'
 
 class App extends Component {
 	constructor(props){
@@ -29,52 +30,50 @@ class App extends Component {
 	}
 
 	render (){
-		console.log(this.state)
-		let languages = ['none','JavaScript','Python','C++','C#','Java','PHP','Clojure','Ruby','Erlang','Scala','Haskell','Swift']
+		let languages = ['none','Shell','HTML','CSS','JavaScript','Python','C','C++','C#','Java','PHP','Clojure','Ruby','Erlang','Scala','Haskell','Swift']
 		let stars = [0,10,25,50,100,200,500,1000,2500,5000,10000]
 		return (
-			<div>
-				<form className='search-bar' onSubmit={this.handleRepos}>
-					<input placeholder="Поиск по имени/репозиторию" id="repo" type="text" onChange={this.dataToState}/>
-					<input type="submit" value="Найти это!"/>
-				</form>
-				<Selector id={"progLang"} onChange={this.dataToState}>
-					{languages.map(language => {
-						return(
-							<Selector.Option key={languages.indexOf(language)} lang={language}/> 
-						)
-					})}
-				</Selector>
-				<Selector id={"stars"} onChange={this.dataToState}>
-					{stars.map(star => {
-						return(
-							<Selector.Option key={stars.indexOf(star)} lang={star}/> 
-						)
-					})}
-				</Selector>
-				<div>
-					<h4>Список доступных репозиториев:</h4>
-					<table>
-						<tbody>
-							{!this.props.repos.items
-								?<tr><td>Список загружается...</td></tr>
-								:this.props.repos['total_count'] === 0
-									?<tr><td>По заданным параметрам ничего не найдено!</td></tr>
-									:this.props.repos.items.map(repo => {
-										return(
-											<tr key={repo.id}>
-												<td>{repo.name}</td>
-												<td>{repo.description}</td>
-												<td>{repo.language}</td>
-												<td>{repo.stargazers_count}</td>
-											</tr>
-										)
-									})		
-							}	
-						</tbody>
-					</table>
-				</div>
-			</div>
+			<main>
+				<nav>
+					<form onSubmit={this.handleRepos}>
+						<label>Поиск<input placeholder="Поиск по имени/репозиторию" id="repo" type="text" onChange={this.dataToState}/></label>	
+						<Selector id={"progLang"} name={"Язык"} onChange={this.dataToState}>
+							{languages.map(language => {
+								return(
+									<Selector.Option key={languages.indexOf(language)} lang={language}/> 
+								)
+							})}
+						</Selector>
+						<Selector id={"stars"} name="Кол-во звёзд" onChange={this.dataToState}>
+							{stars.map(star => {
+								return(
+									<Selector.Option key={stars.indexOf(star)} lang={star}/> 
+								)
+							})}
+						</Selector>
+						<input type="submit" value="Найти это!"/>
+					</form>
+				</nav>
+				<table>
+					<tbody>
+						{!this.props.repos.items
+							?<tr><td>Список загружается...</td></tr>
+							:this.props.repos['total_count'] === 0
+								?<tr><td>По заданным параметрам ничего не найдено!</td></tr>
+								:this.props.repos.items.map(repo => {
+									return(
+										<tr key={repo.id}>
+											<td>{repo.description}</td>
+											<td>{repo.name}</td>
+											<td>{repo.language}</td>
+											<td><span>☆</span>{repo.stargazers_count}</td>
+										</tr>
+									)
+								})		
+						}	
+					</tbody>
+				</table>
+			</main>
 		)
 	}
 }
