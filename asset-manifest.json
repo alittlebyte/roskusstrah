@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/roskusstrah/static/css/main.18cc4e41.chunk.css",
-    "main.js": "/roskusstrah/static/js/main.12316a8c.chunk.js",
-    "main.js.map": "/roskusstrah/static/js/main.12316a8c.chunk.js.map",
+    "main.css": "/roskusstrah/static/css/main.6b583e5f.chunk.css",
+    "main.js": "/roskusstrah/static/js/main.841f2006.chunk.js",
+    "main.js.map": "/roskusstrah/static/js/main.841f2006.chunk.js.map",
     "runtime-main.js": "/roskusstrah/static/js/runtime-main.5398e5a7.js",
     "runtime-main.js.map": "/roskusstrah/static/js/runtime-main.5398e5a7.js.map",
     "static/js/2.294b6500.chunk.js": "/roskusstrah/static/js/2.294b6500.chunk.js",
     "static/js/2.294b6500.chunk.js.map": "/roskusstrah/static/js/2.294b6500.chunk.js.map",
     "index.html": "/roskusstrah/index.html",
-    "precache-manifest.39d57f966a13d4b7a899b5c46bb352f7.js": "/roskusstrah/precache-manifest.39d57f966a13d4b7a899b5c46bb352f7.js",
+    "precache-manifest.00d6c3f446d46159994659ebfa0ad2e7.js": "/roskusstrah/precache-manifest.00d6c3f446d46159994659ebfa0ad2e7.js",
     "service-worker.js": "/roskusstrah/service-worker.js",
-    "static/css/main.18cc4e41.chunk.css.map": "/roskusstrah/static/css/main.18cc4e41.chunk.css.map",
+    "static/css/main.6b583e5f.chunk.css.map": "/roskusstrah/static/css/main.6b583e5f.chunk.css.map",
     "static/js/2.294b6500.chunk.js.LICENSE.txt": "/roskusstrah/static/js/2.294b6500.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5398e5a7.js",
     "static/js/2.294b6500.chunk.js",
-    "static/css/main.18cc4e41.chunk.css",
-    "static/js/main.12316a8c.chunk.js"
+    "static/css/main.6b583e5f.chunk.css",
+    "static/js/main.841f2006.chunk.js"
   ]
 }
