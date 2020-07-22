@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.js": "/roskusstrah/static/js/main.02138e81.chunk.js",
-    "main.js.map": "/roskusstrah/static/js/main.02138e81.chunk.js.map",
+    "main.css": "/roskusstrah/static/css/main.f6a3c99b.chunk.css",
+    "main.js": "/roskusstrah/static/js/main.db828198.chunk.js",
+    "main.js.map": "/roskusstrah/static/js/main.db828198.chunk.js.map",
     "runtime-main.js": "/roskusstrah/static/js/runtime-main.5398e5a7.js",
     "runtime-main.js.map": "/roskusstrah/static/js/runtime-main.5398e5a7.js.map",
     "static/js/2.294b6500.chunk.js": "/roskusstrah/static/js/2.294b6500.chunk.js",
     "static/js/2.294b6500.chunk.js.map": "/roskusstrah/static/js/2.294b6500.chunk.js.map",
     "index.html": "/roskusstrah/index.html",
-    "precache-manifest.61465e898a306f04dd5d6ce25e3f984f.js": "/roskusstrah/precache-manifest.61465e898a306f04dd5d6ce25e3f984f.js",
+    "precache-manifest.da1d1575cf664c2973b12caa9d60d4aa.js": "/roskusstrah/precache-manifest.da1d1575cf664c2973b12caa9d60d4aa.js",
     "service-worker.js": "/roskusstrah/service-worker.js",
+    "static/css/main.f6a3c99b.chunk.css.map": "/roskusstrah/static/css/main.f6a3c99b.chunk.css.map",
     "static/js/2.294b6500.chunk.js.LICENSE.txt": "/roskusstrah/static/js/2.294b6500.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5398e5a7.js",
     "static/js/2.294b6500.chunk.js",
-    "static/js/main.02138e81.chunk.js"
+    "static/css/main.f6a3c99b.chunk.css",
+    "static/js/main.db828198.chunk.js"
   ]
 }
