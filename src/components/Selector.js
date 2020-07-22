@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../styles/Selector.css'
 
 export default class Selector extends Component{
 	render(){

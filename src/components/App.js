@@ -30,7 +30,7 @@ class App extends Component {
 	}
 
 	render (){
-		let languages = ['Любой','Shell','HTML','CSS','JavaScript','Python','C','C++','C#','Java','PHP','Clojure','Ruby','Erlang','Scala','Haskell','Swift']
+		let languages = ['Любой','Shell','HTML','CSS','JavaScript','Python','C','C++','Java','PHP','Clojure','Ruby','Erlang','Scala','Haskell','Swift']
 		let stars = [0,10,25,50,100,200,500,1000,2500,5000,10000]
 		return (
 			<main>
